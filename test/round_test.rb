@@ -38,6 +38,10 @@ class RoundTest < Minitest::Test
     round = Round.new(deck)
 
     assert_instance_of Turn, round.take_turn("Juneau")
+
+    assert_equal 1, round.current_card_number
+
+    assert_equal 1, round.num_asked_per_cat
   end
 
   def test_percent_correct

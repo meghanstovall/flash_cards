@@ -7,3 +7,11 @@ card6 = Card.new("What is the color of the shirt you are currently wearing?", "b
 card7 = Card.new("What is the name of the kind of phone Apple created?", "iphone", :Tech)
 card8 = Card.new("Is backend development or frontend development focused more on building websites?", "frontend", :Tech)
 card9 = Card.new("When was the first personal computer invented?", "1971", :Tech)
+
+deck = Deck.new[card1, card2, card3, card4, card5, card6, card7, card8, card9]
+
+round = Round.new(deck)
+
+def start
+  
+end
