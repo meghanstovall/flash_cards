@@ -1,5 +1,3 @@
-require_relative 'card.rb'
-require_relative 'turn.rb'
 class Deck
 
   attr_reader :cards
