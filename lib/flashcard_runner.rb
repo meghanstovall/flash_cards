@@ -13,5 +13,16 @@ deck = Deck.new[card1, card2, card3, card4, card5, card6, card7, card8, card9]
 round = Round.new(deck)
 
 def start
-  
+  counter = 0
+  until counter == deck.cards.counter do
+    puts "Welcome, you're playing with #{deck.cards.count} cards"
+    puts "------------------------------------------------------"
+    puts "This is card number #{round.current_card_number} out of #{deck.cards.count}"
+    puts "Question: #{round.current_card.question}"
+
+    user_answer = gets
+
+    user_turn = round.take_turn(user_answer)
+    user_turn.feedback
+  end
 end
