@@ -36,4 +36,11 @@ def results
   puts "You had #{round.total_correct} correct guess out of #{deck.cards.count} for a total score of #{round.percent_correct}"
   # Each loop to make sure i dont print multiples of the same category?
   # puts " #{round.percent_correct_by_cat()} correct"
+  puts "Sports - #{round.percent_correct_by_cat(:Sports)}% correct"
+  puts "Colors - #{round.percent_correct_by_cat(:Colors)}% correct"
+  puts "Tech - #{round.percent_correct_by_cat(:Tech)}% correct"
+
 end
+
+start
+results

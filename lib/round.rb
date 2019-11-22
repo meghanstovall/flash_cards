@@ -19,7 +19,7 @@ class Round
 
   def take_turn(guess)
     new_turn = Turn.new(guess, current_card)
-    turns << new_turn
+    @turns << new_turn
 
     @current_card_number += 1
     if guess == current_card.answer
