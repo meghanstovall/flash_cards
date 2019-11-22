@@ -24,5 +24,16 @@ def start
 
     user_turn = round.take_turn(user_answer)
     user_turn.feedback
+
+    counter += 1
   end
+
+  results
+end
+
+def results
+  puts "****** Game over! ******"
+  puts "You had #{round.total_correct} correct guess out of #{deck.cards.count} for a total score of #{round.percent_correct}"
+  # Each loop to make sure i dont print multiples of the same category?
+  # puts " #{round.percent_correct_by_cat()} correct"
 end
