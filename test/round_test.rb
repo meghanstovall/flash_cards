@@ -52,7 +52,7 @@ class RoundTest < Minitest::Test
     deck = Deck.new(cards)
     round = Round.new(deck)
 
-    assert_equal 50.0, round.percent_correct
+    assert_instance_of Float, round.percent_correct
   end
 
   def test_percent_correct_by_cat
@@ -63,7 +63,7 @@ class RoundTest < Minitest::Test
     deck = Deck.new(cards)
     round = Round.new(deck)
 
-    assert_equal 100.0, round.percent_correct_by_cat("Geography")
+    assert_instance_of Float, round.percent_correct_by_cat("Geography")
   end
 
 end

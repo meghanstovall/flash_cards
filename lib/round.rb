@@ -2,7 +2,7 @@ require './lib/turn'
 
 class Round
 
-  attr_reader :deck, :turns, :total_correct, :num_correct_by_cat, :num_asked_per_cat
+  attr_reader :deck, :turns, :total_correct, :current_card_number, :num_correct_by_cat, :num_asked_per_cat
 
   def initialize(deck)
     @deck = deck

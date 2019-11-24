@@ -12,21 +12,21 @@ card7 = Card.new("What is the name of the kind of phone Apple created?", "iphone
 card8 = Card.new("Is backend development or frontend development focused more on building websites?", "frontend", :Tech)
 card9 = Card.new("When was the first personal computer invented?", "1971", :Tech)
 
-deck = Deck.new([card1, card2, card3, card4, card5, card6, card7, card8, card9])
+@deck = Deck.new([card1, card2, card3, card4, card5, card6, card7, card8, card9])
 
-round = Round.new(deck)
+@round = Round.new(@deck)
 
 def start
   counter = 0
-  until counter == deck.cards.counter do
-    puts "Welcome, you're playing with #{deck.cards.count} cards"
+  until counter == @deck.cards.count do
+    puts "Welcome, you're playing with #{@deck.cards.count} cards"
     puts "------------------------------------------------------"
-    puts "This is card number #{round.current_card_number} out of #{deck.cards.count}"
-    puts "Question: #{round.current_card.question}"
+    puts "This is card number #{@round.current_card_number} out of #{@deck.cards.count}"
+    puts "Question: #{@round.current_card.question}"
 
     user_answer = gets
 
-    user_turn = round.take_turn(user_answer)
+    user_turn = @round.take_turn(user_answer)
     user_turn.feedback
 
     counter += 1
@@ -37,12 +37,12 @@ end
 
 def results
   puts "****** Game over! ******"
-  puts "You had #{round.total_correct} correct guess out of #{deck.cards.count} for a total score of #{round.percent_correct}"
+  puts "You had #{@round.total_correct} correct guess out of #{@deck.cards.count} for a total score of #{@round.percent_correct}"
   # Each loop to make sure i dont print multiples of the same category?
   # puts " #{round.percent_correct_by_cat()} correct"
-  puts "Sports - #{round.percent_correct_by_cat(:Sports)}% correct"
-  puts "Colors - #{round.percent_correct_by_cat(:Colors)}% correct"
-  puts "Tech - #{round.percent_correct_by_cat(:Tech)}% correct"
+  puts "Sports - #{@round.percent_correct_by_cat(:Sports)}% correct"
+  puts "Colors - #{@round.percent_correct_by_cat(:Colors)}% correct"
+  puts "Tech - #{@round.percent_correct_by_cat(:Tech)}% correct"
 
 end
 
